@@ -2,6 +2,7 @@ import os
 import requests
 import telegram
 import time
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -24,7 +25,7 @@ def parse_homework_status(homework):
 def get_homework_statuses(current_timestamp):
     headers = {'Authorization': f'OAuth {PRACTICUM_TOKEN}'}
     data = {
-        'from_date' : current_timestamp
+        'from_date' : 0
     }
     url = 'https://praktikum.yandex.ru/api/user_api/homework_statuses/'
     homework_statuses = requests.get(url=url, params=data, headers=headers)
