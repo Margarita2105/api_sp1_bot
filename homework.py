@@ -25,7 +25,7 @@ def parse_homework_status(homework):
 def get_homework_statuses(current_timestamp):
     headers = {'Authorization': f'OAuth {PRACTICUM_TOKEN}'}
     data = {
-        'from_date' : 0
+        'from_date' : current_timestamp
     }
     url = 'https://praktikum.yandex.ru/api/user_api/homework_statuses/'
     homework_statuses = requests.get(url=url, params=data, headers=headers)
